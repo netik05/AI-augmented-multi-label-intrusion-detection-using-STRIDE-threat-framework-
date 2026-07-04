@@ -79,4 +79,9 @@ The signals are validated by two independent methods that **agree**:
 
 Directional agreement between design intent and empirical impact provides strong evidence the signals capture genuine threat-relevant patterns rather than spurious correlations.
 
+<p align="center">
+  <img src="figures/feature_importance_rf.png" alt="Top-20 feature importance" width="85%">
+  <br><em>Top-20 features by Gini importance — engineered <code>feat_*</code> signals rank among the raw flow features.</em>
+</p>
+
 > Implementation: see the feature-engineering cell in [`../notebooks/stride_multilabel_ids.ipynb`](../notebooks/stride_multilabel_ids.ipynb).

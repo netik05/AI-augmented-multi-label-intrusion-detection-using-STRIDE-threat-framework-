@@ -57,7 +57,13 @@ The **identical pipeline** — same architecture, same hyperparameters, no retun
 - 🔁 **Cross-dataset generalisation:** performance *improves* on the second dataset — ruling out dataset memorisation.
 - ⚡ **Real-time ready:** XGBoost inference < 1 ms/flow, BiLSTM < 5 ms/flow.
 
-> See [`docs/results.md`](docs/results.md) for the complete per-dimension, ablation, cross-validation, and statistical-test tables.
+<p align="center">
+  <img src="docs/figures/roc_curves_per_dimension.png" alt="Per-dimension ROC curves on UNSW-NB15" width="92%">
+  <br>
+  <em>Per-STRIDE ROC curves on UNSW-NB15 — mean AUROC 0.9558. Every dimension clears 0.92 AUROC.</em>
+</p>
+
+> See [`docs/results.md`](docs/results.md) for the complete per-dimension, ablation, cross-validation, and statistical-test tables — with all figures.
 
 ---
 
@@ -113,6 +119,12 @@ SHAP is used not just for feature importance, but for **semantic validation** �
 - 🎯 **`feat_asymmetry_ratio`** ranks as the **#1 predictor of Repudiation** — exactly the dimension it was engineered to capture.
 - 🚨 **`service_dns`** is the strongest **Denial of Service** signal, reflecting DNS amplification.
 
+<p align="center">
+  <img src="docs/figures/shap_cross_stride_heatmap.png" alt="Cross-STRIDE SHAP feature-importance heatmap" width="88%">
+  <br>
+  <em>Mean |SHAP| per feature across all six STRIDE dimensions (★ = engineered behavioural signal).</em>
+</p>
+
 ---
 
 ## Datasets
@@ -140,7 +152,8 @@ The datasets are **not** included in this repository (licensing + size). Downloa
 │   ├── Thesis_Report.pdf             # Full honours thesis
 │   ├── architecture.md               # Model architecture & fusion strategies
 │   ├── feature-engineering.md        # The 8 behavioural signals (formulas + rationale)
-│   └── results.md                    # Full results, ablations & statistical validation
+│   ├── results.md                    # Full results, ablations & statistical validation
+│   └── figures/                      # Result figures (ROC, confusion matrices, SHAP, PR)
 ├── requirements.txt
 ├── CITATION.cff
 ├── LICENSE

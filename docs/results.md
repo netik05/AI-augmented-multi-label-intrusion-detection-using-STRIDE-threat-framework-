@@ -48,6 +48,16 @@ All experiments ran on the Kaggle GPU environment (NVIDIA Tesla P100, 16 GB) wit
 | Elev. of Privilege (E) | 0.9644 | 0.7063 | 0.7752 |
 | **Mean** | **0.9558** | **0.6593** | **0.6869** |
 
+<p align="center">
+  <img src="figures/roc_curves_per_dimension.png" alt="Per-dimension ROC curves" width="85%">
+  <br><em>ROC curves per STRIDE dimension (UNSW-NB15) — mean AUROC 0.9558.</em>
+</p>
+
+<p align="center">
+  <img src="figures/confusion_matrices.png" alt="Per-dimension confusion matrices" width="85%">
+  <br><em>Threshold-optimised confusion matrices per dimension (percentages with raw counts).</em>
+</p>
+
 ---
 
 ## 4. Cross-Dataset Generalisation (UNSW-NB15 vs CIC-IDS-2018)
@@ -74,6 +84,11 @@ The **identical** pipeline — no retuning — applied to a 500,000-flow CIC-IDS
 | **Mean** | **0.9558** | **0.9893** |
 
 Performance *improves* on the second dataset across all four metrics, ruling out dataset memorisation. Repudiation reaches AUROC 0.9999 on CIC-IDS-2018, where the Bot category supplies 40,455 positive samples vs UNSW-NB15's 2,329 Backdoor samples.
+
+<p align="center">
+  <img src="figures/pr_curves_cross_dataset.png" alt="Precision-recall curves, both datasets" width="95%">
+  <br><em>Precision–recall curves per STRIDE dimension — UNSW-NB15 (left) vs CIC-IDS-2018 (right).</em>
+</p>
 
 ---
 
@@ -141,6 +156,16 @@ For Repudiation, Information Disclosure, and EoP the single-label baseline score
 - **`feat_asymmetry_ratio`** is the #1 Repudiation predictor — the dimension it was engineered for.
 - **`proto_udp`** (SHAP 1.165) is a strong Repudiation indicator — UDP leaves minimal audit trail.
 
+<p align="center">
+  <img src="figures/shap_cross_stride_heatmap.png" alt="Cross-STRIDE SHAP heatmap" width="80%">
+  <br><em>Mean |SHAP| per feature across all six dimensions (★ = engineered behavioural signal).</em>
+</p>
+
+<p align="center">
+  <img src="figures/shap_top_features_table.png" alt="Top SHAP features per STRIDE dimension" width="95%">
+  <br><em>Top-ranked features per STRIDE dimension by mean |SHAP|.</em>
+</p>
+
 ---
 
 ## 8. Computational Performance
@@ -152,6 +177,11 @@ For Repudiation, Information Disclosure, and EoP the single-label baseline score
 | Threshold optimisation | 30 s | 30 s | — |
 | 5-fold CV | ~6 min | ~4 min | — |
 | SHAP analysis | ~5 min | ~4 min | — |
+
+<p align="center">
+  <img src="figures/training_inference_time.png" alt="Training and inference time comparison" width="80%">
+  <br><em>Training and inference times across both datasets.</em>
+</p>
 
 ---
 
