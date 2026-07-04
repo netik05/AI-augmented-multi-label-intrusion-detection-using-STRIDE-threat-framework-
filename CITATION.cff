@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software or its findings, please cite it as below."
+title: "Adaptive STRIDE-based Multi-Label Intrusion Detection using AI-Augmented Behavioural Modelling"
+type: software
+authors:
+  - family-names: "Maheshwari"
+    given-names: "Netik Kumar"
+    affiliation: "University of New South Wales (UNSW Sydney)"
+abstract: >-
+  A framework that reformulates network intrusion detection as a structured
+  multi-label prediction problem aligned with the STRIDE threat model
+  (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service,
+  Elevation of Privilege). It combines eight STRIDE-aligned behavioural feature
+  signals, a static XGBoost ensemble, and a temporal Bidirectional LSTM with
+  attention, validated with SHAP explainability and McNemar's statistical test
+  across the UNSW-NB15 and CIC-IDS-2018 benchmarks.
+keywords:
+  - intrusion detection
+  - STRIDE
+  - multi-label classification
+  - XGBoost
+  - LSTM
+  - SHAP
+  - network security
+  - UNSW-NB15
+  - CIC-IDS-2018
+license: MIT
+year: 2026
